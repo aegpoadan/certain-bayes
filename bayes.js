@@ -49,6 +49,7 @@ var BAYES = function (input, bitsFunction, verbose) {
   this.uniqueNegativeBits = 0;
   this.totalPositiveInputs = 0;
   this.totalNegativeInputs = 0;
+  this.totalInputs = input.length,
   this.positveProbability = 0;
   this.negativeProbability = 0;
   this.bitClass = {};
@@ -57,75 +58,27 @@ var BAYES = function (input, bitsFunction, verbose) {
 	  Cycle through our inputs and determine some probabilities.
 	*/
   for(var i=0; i<input.length; i++)	{
-      var singleInput = input[i][0];
-      var decisionBoolean = input[i][1];
-      
-      /*
-        Split the singleInput by the bitsFunction.
-      */
-      var bits = this.bitsFunction(singleInput);
-      
-      /*
-        this.verbose == debugging, console.log the singleInut and our progress
-      */
-      if(this.verbose)
-        console.log(singleInput, Math.floor(i/input.length*100), "%");
-        
-		/*
-		  Cycle through the bits (Remember, 'singleInput' split by 'bitsFunction').
-		*/
-		for(var j=0; j<bits.length; j++)	{
-      /*
-        if we've never encountered this bit before, add it to our 'bitClass'
-      */
-      if(typeof this.bitClass[bits[j]] == 'undefined') {
-        this.bitClass[bits[j]] = {
-          positive: 0,
-          negative: 0,
-          count: 1
-        };
-        
-        /*
-          Keep track of the number of unique positive/negative bits.
-        */
-        if(decisionBoolean)
-          this.uniquePositiveBits++;
-        else
-          this.uniqueNegativeBits++;
-      }
-      
-      /*
-        Add to this bit's as positive/negative classification 
-        given the singleInput's classification.
-      */
-      if(decisionBoolean) {
-        this.bitClass[bits[j]].positive++;
-        this.totalPositiveBits++;
-      } else {
-        this.bitClass[bits[j]].negative++;
-        this.totalNegativeBits++;
-      }
-      
-      /*
-        Keep track of the times that this bit has appeared
-      */
-      this.bitClass[bits[j]].count++;
-		}
-		
-		/*
-		  Keep track of the total number of positive/negative bits
-		*/
-		if(decisionBoolean)
-		  this.totalPositiveInputs++;
-		else
-		  this.totalNegativeInputs++;
+    /*
+      this.verbose == debugging, log our progress
+    */
+    if(this.verbose)
+      console.log(Math.floor(i/input.length*100) + "%");
+    
+    /*
+      Learn from the training data
+    */
+    this.learnHelper(input[i]);
 	}
 	
+	this.calculateOverallProbabilities();
+};
+
+BAYES.prototype.calculateOverallProbabilities = function() {
   /*
     Determine our overall positive/negative probabilities.
   */
-  this.positiveProbability = (this.totalPositiveInputs / input.length);
-  this.negativeProbability = (this.totalNegativeInputs / input.length);
+  this.positiveProbability = (this.totalPositiveInputs / this.totalInputs);
+  this.negativeProbability = (this.totalNegativeInputs / this.totalInputs);
 	
 	/*
 	  Calculate the positive/negative probabilities for each bitClass (bit)
@@ -136,6 +89,89 @@ var BAYES = function (input, bitsFunction, verbose) {
     this.bitClass[bit].negativeProbability = 
       (this.bitClass[bit].negative / this.totalNegativeBits);
   }
+};
+
+BAYES.prototype.learn = function(singleInput, correctOutput) {
+  this.learnHelper(singleInput, correctOutput);
+  
+  this.totalInputs++;
+  this.calculateOverallProbabilities();
+};
+
+BAYES.prototype.learnHelper = function(singleInput, correctOutput) {
+  /*
+    Ensure we are given the correct inputs for learning
+  */
+  if(typeof singleInput !== 'string' && typeof singleInput !== 'object') {
+    console.error("[BAYES] ERROR: 'singleInput' expected to be of type 'string' " +
+      "or 'object' but was not or was not given at all.");
+    return;
+  }
+  
+  if(typeof singleInput == 'object' && singleInput.length !== 0) {
+    correctOutput = singleInput[1];
+    singleInput = singleInput[0];
+  }
+  
+  if(typeof correctOutput !== 'boolean') {
+    console.error("[BAYES] ERROR: 'correctOutput' expected to be of type 'boolean' " +
+      "but was not or was not given at all.");
+    return;
+  }
+  
+  /*
+    Split the singleInput by the bitsFunction.
+  */
+  var bits = this.bitsFunction(singleInput);
+  
+	/*
+	  Cycle through the bits (Remember, 'singleInput' split by 'bitsFunction').
+	*/
+	for(var j=0; j<bits.length; j++)	{
+    /*
+      if we've never encountered this bit before, add it to our 'bitClass'
+    */
+    if(typeof this.bitClass[bits[j]] == 'undefined') {
+      this.bitClass[bits[j]] = {
+        positive: 0,
+        negative: 0,
+        count: 1
+      };
+      
+      /*
+        Keep track of the number of unique positive/negative bits.
+      */
+      if(correctOutput)
+        this.uniquePositiveBits++;
+      else
+        this.uniqueNegativeBits++;
+    }
+    
+    /*
+      Add to this bit's as positive/negative classification 
+      given the singleInput's classification.
+    */
+    if(correctOutput) {
+      this.bitClass[bits[j]].positive++;
+      this.totalPositiveBits++;
+    } else {
+      this.bitClass[bits[j]].negative++;
+      this.totalNegativeBits++;
+    }
+    
+    /*
+      Keep track of the times that this bit has appeared
+    */
+    this.bitClass[bits[j]].count++;
+	}
+	
+	/*
+	  Keep track of the total number of positive/negative bits
+	*/
+	if(correctOutput)
+	  this.totalPositiveInputs++;
+	else
+	  this.totalNegativeInputs++;
 };
 
 BAYES.prototype.guess = function(input) {
@@ -162,7 +198,7 @@ BAYES.prototype.guess = function(input) {
       prbPos *= this.bitClass[bits[j]].positiveProbability;
       prbNeg *= this.bitClass[bits[j]].negativeProbability;
       certainty++;
-    } else if(this.verbose !== 'undefined') {
+    } else if(this.verbose) {
       /*
         We've never encountered this bit before, warn about it
       */
@@ -172,7 +208,7 @@ BAYES.prototype.guess = function(input) {
   
 	/*
     Begin certainty calculation:
-    Set base certainty to the % of words we know in the phrase...
+    Set base certainty to the percent of words we know in the phrase...
 	*/
 	certainty = (certainty / bits.length);
 	var divisor = Math.min(Math.max(prbPos, prbNeg), 1);

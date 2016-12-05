@@ -390,7 +390,7 @@ var run = function () {
     */
     phrase = phrase.toLowerCase()
       .replace(/\s*(a|an|and|the)\b/ig, '')
-      .replace(/[^\w\s]/ig, '')
+      .replace(/[^\w\s\$0-9]/ig, '')
       .trim();
       
     return phrase.split(" ");
@@ -416,8 +416,17 @@ var run = function () {
     var r = bayes.guess(postbody);
     
     if(postbody !== "") {
-      var guessBoolean = r[0] > r[1];
-  		console.log(postbody, guessBoolean, r);
+      var guess = r[0] > r[1];
+      console.log(postbody, guess, r);
+      
+      //manual training, "is the post about money in any way?"
+      if(i<Math.floor(posts.length/4)) {
+        var isAboutBuyingSelling = window.confirm("Is the following about money?" +
+          "\n\n"+postbody);
+        
+        //'learn' from the human training...  
+        bayes.learn(postbody, isAboutBuyingSelling);
+      }
     }
   }
 };
