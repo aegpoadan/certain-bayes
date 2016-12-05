@@ -45,13 +45,13 @@ var BAYES = function (input, bitsFunction, verbose) {
   
   this.totalPositiveBits = 0;
   this.totalNegativeBits = 0;
-	this.uniquePositiveBits = 0;
-	this.uniqueNegativeBits = 0;
-	this.totalPositiveInputs = 0;
-	this.totalNegativeInputs = 0;
-	this.positveProbability = 0;
-	this.negativeProbability = 0;
-	this.bitClass = {};
+  this.uniquePositiveBits = 0;
+  this.uniqueNegativeBits = 0;
+  this.totalPositiveInputs = 0;
+  this.totalNegativeInputs = 0;
+  this.positveProbability = 0;
+  this.negativeProbability = 0;
+  this.bitClass = {};
 	
 	/*
 	  Cycle through our inputs and determine some probabilities.
@@ -70,14 +70,14 @@ var BAYES = function (input, bitsFunction, verbose) {
       */
       if(this.verbose)
         console.log(singleInput, Math.floor(i/input.length*100), "%");
-		
+        
 		/*
 		  Cycle through the bits (Remember, 'singleInput' split by 'bitsFunction').
 		*/
 		for(var j=0; j<bits.length; j++)	{
-		  /*
-		    if we've never encountered this bit before, add it to our 'bitClass'
-		  */
+      /*
+        if we've never encountered this bit before, add it to our 'bitClass'
+      */
       if(typeof this.bitClass[bits[j]] == 'undefined') {
         this.bitClass[bits[j]] = {
           positive: 0,
@@ -121,21 +121,21 @@ var BAYES = function (input, bitsFunction, verbose) {
 		  this.totalNegativeInputs++;
 	}
 	
-	/*
-	  Determine our overall positive/negative probabilities.
-	*/
-	this.positiveProbability = (this.totalPositiveInputs / input.length);
-	this.negativeProbability = (this.totalNegativeInputs / input.length);
+  /*
+    Determine our overall positive/negative probabilities.
+  */
+  this.positiveProbability = (this.totalPositiveInputs / input.length);
+  this.negativeProbability = (this.totalNegativeInputs / input.length);
 	
 	/*
 	  Calculate the positive/negative probabilities for each bitClass (bit)
 	*/
-	for(var bit in this.bitClass) {
-	  this.bitClass[bit].positiveProbability = 
-	    (this.bitClass[bit].positive / this.totalPositiveBits);
-	  this.bitClass[bit].negativeProbability = 
-	    (this.bitClass[bit].negative / this.totalNegativeBits);
-	}
+  for(var bit in this.bitClass) {
+    this.bitClass[bit].positiveProbability = 
+      (this.bitClass[bit].positive / this.totalPositiveBits);
+    this.bitClass[bit].negativeProbability = 
+      (this.bitClass[bit].negative / this.totalNegativeBits);
+  }
 };
 
 BAYES.prototype.guess = function(input) {
@@ -147,55 +147,55 @@ BAYES.prototype.guess = function(input) {
 	/*
 	  Initialize some variables...
 	*/
-	var prbPos = this.positiveProbability,
-	  prbNeg = this.negativeProbability,
-	  certainty = 0;
-	
+  var prbPos = this.positiveProbability,
+    prbNeg = this.negativeProbability,
+    certainty = 0;
+    
 	for(var j=0; j<bits.length; j++)	{
 	  if(typeof this.bitClass[bits[j]] !== 'undefined') {
-	    /*
-	      Multiplicative function for both positive and negative
-	      probabilities to support mutually exclusive decisions
-	      (being high positive probability doesn't merit low
-	      negative probability and vice versa)
-	    */
+      /*
+        Multiplicative function for both positive and negative
+        probabilities to support mutually exclusive decisions
+        (being high positive probability doesn't merit low
+        negative probability and vice versa)
+      */
       prbPos *= this.bitClass[bits[j]].positiveProbability;
       prbNeg *= this.bitClass[bits[j]].negativeProbability;
       certainty++;
-	  } else if(this.verbose !== 'undefined') {
-	    /*
-	      We've never encountered this bit before, warn about it
-	    */
-	    console.warn("I Don't know about ", bits[j]);
-	  }
-	}
-	
+    } else if(this.verbose !== 'undefined') {
+      /*
+        We've never encountered this bit before, warn about it
+      */
+      console.warn("I Don't know about ", bits[j]);
+    }
+  }
+  
 	/*
-	  Begin certainty calculation:
-	  Set base certainty to the % of words we know in the phrase...
+    Begin certainty calculation:
+    Set base certainty to the % of words we know in the phrase...
 	*/
 	certainty = (certainty / bits.length);
 	var divisor = Math.min(Math.max(prbPos, prbNeg), 1);
 	
 	if(divisor === 0) {
-	  /*
-	    divisor === 0 means prbPos === 0 && prbNeg === 0
-	    aka we know literally nothing about any of the words
-	    in this phrase, so we can't be certain of a decision and
-	    furthermore we divide by zero, so set certainty to zero.
-	  */
-	  certainty = 0.0;
+    /*
+      divisor === 0 means prbPos === 0 && prbNeg === 0
+      aka we know literally nothing about any of the words
+      in this phrase, so we can't be certain of a decision and
+      furthermore we divide by zero, so set certainty to zero.
+    */
+    certainty = 0.0;
 	} else {
-	  /*
-	    Certainty multiplicative: factor in the difference in probabilities
-	    (the difference means we found a lot of positive or negative words
-	    and so the parity is evident) and normalize the data by the divisor
-	  */
-	  certainty = certainty * (Math.abs(prbPos - prbNeg) / divisor);
+    /*
+      Certainty multiplicative: factor in the difference in probabilities
+      (the difference means we found a lot of positive or negative words
+      and so the parity is evident) and normalize the data by the divisor
+    */
+    certainty = certainty * (Math.abs(prbPos - prbNeg) / divisor);
 	}
 	
-	/*
-	  Return our guess.
-	*/
-	return [prbPos, prbNeg, certainty];
+  /*
+    Return our guess.
+  */
+  return [prbPos, prbNeg, certainty];
 };
