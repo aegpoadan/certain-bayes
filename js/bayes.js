@@ -135,7 +135,8 @@ BAYES.prototype.learnHelper = function(singleInput, correctOutput) {
       this.bitClass[bits[j]] = {
         positive: 0,
         negative: 0,
-        count: 1
+        count: 0,
+        weight: 1.0
       };
       
       /*
@@ -174,6 +175,65 @@ BAYES.prototype.learnHelper = function(singleInput, correctOutput) {
 	  this.totalNegativeInputs++;
 };
 
+
+BAYES.prototype.train = function(singleInput, correctOutput, learningRate) {
+  
+  //Ensure we are given the correct inputs for learning
+  if(typeof singleInput !== 'string' && typeof singleInput !== 'object') {
+    console.error("[BAYES] ERROR: 'singleInput' expected to be of type 'string' " +
+      "or 'object' but was not or was not given at all.");
+    return;
+  }
+  
+  if(typeof singleInput == 'object' && singleInput.length !== 0) {
+    correctOutput = singleInput[1];
+    singleInput = singleInput[0];
+  }
+  
+  if(typeof correctOutput !== 'boolean') {
+    console.error("[BAYES] ERROR: 'correctOutput' expected to be of type 'boolean' " +
+      "but was not or was not given at all.");
+    return;
+  }
+  
+  
+  //Set out learningRate, default to 0.001 if none is given.
+  this.learningRate = learningRate || 0.01;
+  
+  var guess = this.guess(singleInput);
+  var guessBoolean = (guess[0] > guess[1]);
+  
+  //Split the input by the split function.
+  var bits = this.bitsFunction(singleInput),
+    j = 0;
+  
+  //Apply a gradient to the bitClass in order to 'learn' from
+  //our mistake...
+  for(j=0; j<bits.length; j++)	{
+    if(typeof this.bitClass[bits[j]] !== 'undefined') {
+      //E.G. - Correct output was supposed to be true, and we got
+      //false, so we calculate the max of the negative counts of bits.
+      
+      //Weight the correction based on how confident we were that the
+      //word is positive/negative. If we were very confident, then we punish 100%,
+      //if we were pretty even, don't punish as much.
+      var certainty = 
+        Math.abs(this.bitClass[bits[j]].positive - this.bitClass[bits[j]].negative) /
+        Math.max(this.bitClass[bits[j]].positive, this.bitClass[bits[j]].negative);
+        
+      //Adjust our weight to reflect the correction we calculated
+      if(guessBoolean !== correctOutput) {
+        this.bitClass[bits[j]].weight -= certainty * this.learningRate;
+      } else {
+        //this.bitClass[bits[j]].weight += certainty * this.learningRate;
+      }
+      
+      this.bitClass[bits[j]].weight = Math.min(Math.max(this.bitClass[bits[j]].weight, 0), 1.0);
+    }
+  }
+};
+
+
 BAYES.prototype.guess = function(input) {
 	/*
 	  Split the input by the split function.
@@ -183,8 +243,8 @@ BAYES.prototype.guess = function(input) {
 	/*
 	  Initialize some variables...
 	*/
-  var prbPos = this.positiveProbability,
-    prbNeg = this.negativeProbability,
+  var prbPos = 0.0, //this.positiveProbability,
+    prbNeg = 0.0, //this.negativeProbability,
     certainty = 0;
     
 	for(var j=0; j<bits.length; j++)	{
@@ -195,8 +255,15 @@ BAYES.prototype.guess = function(input) {
         (being high positive probability doesn't merit low
         negative probability and vice versa)
       */
-      prbPos *= this.bitClass[bits[j]].positiveProbability;
-      prbNeg *= this.bitClass[bits[j]].negativeProbability;
+      //prbPos *= this.bitClass[bits[j]].positiveProbability;
+      //prbNeg *= this.bitClass[bits[j]].negativeProbability;
+      
+      prbPos += (this.bitClass[bits[j]].positiveProbability*this.bitClass[bits[j]].weight);
+      prbNeg += (this.bitClass[bits[j]].negativeProbability*this.bitClass[bits[j]].weight);
+      
+      //prbPos *= (this.bitClass[bits[j]].positiveProbability + this.bitClass[bits[j]].weight);
+      //prbNeg *= (this.bitClass[bits[j]].negativeProbability + this.bitClass[bits[j]].weight);
+      
       certainty++;
     } else if(this.verbose) {
       /*
@@ -205,6 +272,11 @@ BAYES.prototype.guess = function(input) {
       console.warn("I Don't know about ", bits[j]);
     }
   }
+  
+  /*
+  prbPos = 1/(1+Math.exp(Math.E, -prbPos));
+	prbNeg = 1/(1+Math.exp(Math.E, -prbNeg));
+	*/
   
 	/*
     Begin certainty calculation:
@@ -234,4 +306,9 @@ BAYES.prototype.guess = function(input) {
     Return our guess.
   */
   return [prbPos, prbNeg, certainty];
+};
+
+BAYES.prototype.guessBoolean = function(input) {
+  var r = this.guess(input);
+  return [r[0] > r[1], r[2]];
 };

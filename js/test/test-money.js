@@ -379,59 +379,120 @@ var phrases = [
   ["worth his salt", true]
 ];
 
-var run = function () {
-  shuffle(phrases);
-  
-  var bayes = new BAYES(phrases, function(phrase) {
-    /*
-      Remove articles in the phrase, return the array of words.
-      "Articles" refers to words that don't matter as they have
-      too many connotations associated with them.
-    */
-    phrase = phrase.toLowerCase()
-      .replace(/\s*(a|an|and|the)\b/ig, '')
-      .replace(/[^\w\s\$0-9]/ig, '')
-      .trim();
-      
-    return phrase.split(" ");
-  });
-  
-  shuffle(phrases);
-  
+
+
+
+
+
+
+shuffle(phrases);
+
+var bayes = new BAYES(phrases, function(phrase) {
+  /*
+    Remove articles in the phrase, return the array of words.
+    "Articles" refers to words that don't matter as they have
+    too many connotations associated with them.
+  */
+  phrase = phrase.toLowerCase()
+    //.replace(/\s*(a|an|and|the)\b/ig, '')
+    .replace(/[^\w\s\$0-9]/ig, '')
+    .trim();
+    
+  return phrase.split(" ");
+});
+
+shuffle(phrases);
+
+for(var learnStep = 0; learnStep<1000; learnStep++) {
   var numCorrect = 0;
   
   for(i=0; i<phrases.length; i++)	{
     var ret = bayes.guess(phrases[i][0]);
+  
+    var rate = (1.0 - learnStep/1000) * 0.01;
+    bayes.train(phrases[i][0], phrases[i][1], rate);
+    
     var guessBoolean = ret[0] > ret[1];
-		if(guessBoolean == phrases[i][1]) numCorrect++;
+    if(guessBoolean == phrases[i][1]) numCorrect++;
   }
   
   var percentCorrect = Math.floor(numCorrect / phrases.length * 100);
   console.log(numCorrect, "/", phrases.length, "=", percentCorrect, "%", 100-percentCorrect, "%");
+}
+
+var posts = [["Is anyone still selling a BIG 10 Football package? Looking to buy!",true],
+  ["Anyone around campus who plays Pokemon go join this page : https://www.facebook.com/groups/1709750475957752/",false],
+  ["looking for 2 drake and future tickets! willing to spend $75-$100 each! let me know if you're selling",true],
+  ["I am no longer an active Mary Kay consultant and I'm just trying to get rid of my inventory. I'm selling everything HALF OFF. Everything is brand new, never used. Please message me with interest, the list and some pics are posted below! Prices are generally half off of the red prices listed! (:",true],
+  ["selling non student football tickets in section 5b for OSU v Bowling Green on 9/3 and OSU v Rutgers on 10/1. Message me if interested.",true],
+  ["Looking for 2 non-student section tickets to the *ichigan game! Message if you or anyone you know is selling!",true],
+  ["Is anyone still selling a BIG 10 Football package? Looking to buy!",true],
+  ["Anyone around campus who plays Pokemon go join this page : https://www.facebook.com/groups/1709750475957752/",false],
+  ["looking for 2 drake and future tickets! willing to spend $75-$100 each! let me know if you're selling",true],
+  ["I am no longer an active Mary Kay consultant and I'm just trying to get rid of my inventory. I'm selling everything HALF OFF. Everything is brand new, never used. Please message me with interest, the list and some pics are posted below! Prices are generally half off of the red prices listed! (:",true],
+  ["selling non student football tickets in section 5b for OSU v Bowling Green on 9/3 and OSU v Rutgers on 10/1. Message me if interested.",true],
+  ["Looking for 2 non-student section tickets to the *ichigan game! Message if you or anyone you know is selling!",true],
+  ["I am selling most of my furniture that I own. Everything needs to be picked up by Aug 1st.\nDinning room table (1 chair 2 stools) $100\nEnd Table $50\nFloating Kitchen Island $100\nRecliners/Couch $150/$75($200 together) ...\n\n\n\n\nSee More",true],
+  ["I have two tickets for each of the 5 big ten games. I'd be willing to sell them individually if the price is right. Message me if you're interested.",true],
+  ["Want to get rid of this. Will sell for the best offer. Good condition.",true],
+  ["Is anyone still selling a BIG 10 Football package? Looking to buy!",true],
+  ["Hi guys\nMy original plans for the year after graduation changed and it looks like I will be staying in Columbus for this coming year! With that said, looking for a place to live. If you or anyone you know has an extra spot, pretty much anywhere in the Columbus area, please let me know! Thank you",true],
+  ["For those students looking for a job, they are currently hiring a bunch of Ohio State University students. If you are interested, feel free to check it out!",true],
+  ["My friend needs someone to sublease her apartment for this upcoming school year! $600/month at an apartment complex within walking distance to campus. The apartment comes with private bedroom and washer and dryer in the apartment! The apartment is updated and the complex is very new. Girls only please. Message me for details if interested!",true],
+  ["Does anyone need somewhere to live starting this August?? My roommate is looking to sublet in our 3 bedroom newly renovated apt on 11th. Message me if you're interested!!",true],
+  ["Couch (good condition) for $100 or best offer",true],
+  ["OSU House for rent for 5 friends right by Student Union <3\nOSU students and graduates! Perfect apartment for 5 friends! Gas, electric and water are included and the kitchen is furnished with 2 Refrigerators, Stove and Dishwasher. On the first floor a Dryer and Washing Machine are provided. The apartment is located right by the Student Center, New Port Music Hall and campus sorority and fraternity houses. Apartment is newly remodeled. We are not renting to individual people it must be 5 friends.",true],
+  ["Is anyone selling 2 Rutgers tickets (side by side) on North stands?",true],
+  ["Trying to find a subleaser for my room next year, $598/month. 107 E 16th Ave Apartment B. Includes fully equipped kitchen, dishwasher, A/C, on-site laundry, off street parking, and great location",true],
+  ["Hello! I have a full size mattress and nothing else so looking for either a frame and box spring or platform bed if anyone is selling any! Thanks.",true],
+  ["Selling multiple general admission Kanye west floor seats for the concert on September 25th, at the schott. Message me for details",true],
+  ["2004 ford ranger edge for sale: $4000 obo. 117k miles. Runs well no issues.",true],
+  ["Renting a room in Harrison West starting August 1st. Message me if interested.",true],
+  ["Looking for 1-2 tickets to Cole Swindell at Flannagans Dublin for Red White and Country on July 3",true],
+  ["looking for 2 drake and future tickets! willing to spend $75-$100 each! let me know if you're selling",true],
+  ["Is anybody interested in catching a ride home over the weekend's and holiday's If so, please check out the OSU Rideshare group, on Facebook! :)\nhttps://www.facebook.com/groups/290632507641327/",true],
+  ["2016-17 SUBLEASE! 2 bedrooms in a 4 bedroom house located on North Campus. West Norwich, right by High Street. 5 minute walk to Fisher/Engineering buildings. Lots of parking, low utilities, awesome air conditioning, big front porch, large living room and kitchen, plus a cost free washer and dryer! $510 per month. Pictures available if interested!",true],
+  ["I am no longer an active Mary Kay consultant and I'm just trying to get rid of my inventory. I'm selling everything HALF OFF. Everything is brand new, never used. Please message me with interest, the list and some pics are posted below! Prices are generally half off of the red prices listed! (:",true],
+  ["I am selling a medium and small dog crate. Both are in good condition and clean.\nMedium: 32 X 21 up to 55 lbs\nSmall: 28 X 20 up to 30 lbs\nI am asking $35 for each",true],
+  ["Table + 5 chairs $80\nCouch $120\nMattress $150\nBox spring $20\nBed frame $120 ...\n\n\nSee More",true],["Hi guys\nMy original plans for the year after graduation changed and it looks like I will be staying in Columbus for this coming year! With that said, looking for a place to live. If you or anyone you know has an extra spot, pretty much anywhere in the Columbus area, please let me know! Thank you",true],
+  ["For those students looking for a job, they are currently hiring a bunch of Ohio State University students. If you are interested, feel free to check it out!",true],
+  ["15\" Macbook Pro - 250 GB SSD, 8 GB RAM - $400\niPad Mini - 64 GB, First Generation - $60\nMessage for more details.",true],
+  ["2004 ford ranger edge for sale: $4000 obo. 117k miles. Runs well no issues.",true],
+  ["My friend needs someone to sublease her apartment for this upcoming school year! $600/month at an apartment complex within walking distance to campus. The apartment comes with private bedroom and washer and dryer in the apartment! The apartment is updated and the complex is very new. Girls only please. Message me for details if interested!",true],
+  ["Renting a room in Harrison West starting August 1st. Message me if interested.",true],
+  ["Is anybody interested in catching a ride home over the weekend's and holiday's If so, please check out the OSU Rideshare group, on Facebook! :)\nhttps://www.facebook.com/groups/290632507641327/",true],
+  ["Does anyone need somewhere to live starting this August?? My roommate is looking to sublet in our 3 bedroom newly renovated apt on 11th. Message me if you're interested!!",true],
+  ["Couch (good condition) for $100 or best offer",true],
+  ["2016-17 SUBLEASE! 2 bedrooms in a 4 bedroom house located on North Campus. West Norwich, right by High Street. 5 minute walk to Fisher/Engineering buildings. Lots of parking, low utilities, awesome air conditioning, big front porch, large living room and kitchen, plus a cost free washer and dryer! $510 per month. Pictures available if interested!",true],
+  ["I am selling a medium and small dog crate. Both are in good condition and clean.\nMedium: 32 X 21 up to 55 lbs\nSmall: 28 X 20 up to 30 lbs\nI am asking $35 for each",true],
+  ["OSU House for rent for 5 friends right by Student Union <3\nOSU students and graduates! Perfect apartment for 5 friends! Gas, electric and water are included and the kitchen is furnished with 2 Refrigerators, Stove and Dishwasher. On the first floor a Dryer and Washing Machine are provided. The apartment is located right by the Student Center, New Port Music Hall and campus sorority and fraternity houses. Apartment is newly remodeled. We are not renting to individual people it must be 5 friends.",true],
+  ["Table + 5 chairs $80\nCouch $120\nMattress $150\nBox spring $20\nBed frame $120 ...\n\n\nSee More",true],
+  ["Trying to find a subleaser for my room next year, $598/month. 107 E 16th Ave Apartment B. Includes fully equipped kitchen, dishwasher, A/C, on-site laundry, off street parking, and great location",true]];
+
+
+for(learnStep=0; learnStep<100; learnStep++) {
+  console.warn("Learning, Step "+learnStep);
   
-  var posts = [{"postBody":"Is anyone still selling a BIG 10 Football package? Looking to buy!","timestamp":"2016\/07\/06 12:23:06"}, {"postBody":"Anyone around campus who plays Pokemon go join this page : https:\/\/www.facebook.com\/groups\/1709750475957752\/","timestamp":"2016\/07\/12 02:24:54"}, {"postBody":"looking for 2 drake and future tickets! willing to spend $75-$100 each! let me know if you're selling","timestamp":"2016\/07\/06 15:57:02"},{"postBody":"","timestamp":"2016\/07\/08 13:00:21"},{"postBody":"","timestamp":"2016\/07\/11 09:49:39"},{"postBody":"I am no longer an active Mary Kay consultant and I'm just trying to get rid of my inventory. I'm selling everything HALF OFF. Everything is brand new, never used. Please message me with interest, the list and some pics are posted below! Prices are generally half off of the red prices listed! (:","timestamp":"2016\/07\/06 08:24:29"},{"postBody":"","timestamp":"2016\/07\/12 15:20:40"},{"postBody":"selling non student football tickets in section 5b for OSU v Bowling Green on 9\/3 and OSU v Rutgers on 10\/1. Message me if interested.","timestamp":"2016\/07\/08 14:55:22"},{"postBody":"","timestamp":"2016\/07\/05 14:24:12"},{"postBody":"Looking for 2 non-student section tickets to the *ichigan game! Message if you or anyone you know is selling!","timestamp":"2016\/07\/11 23:34:56"},{"postBody":"","timestamp":"2016\/07\/10 12:27:37"},{"postBody":"","timestamp":"2016\/07\/06 10:11:59"},{"postBody":"Is anyone still selling a BIG 10 Football package? Looking to buy!","timestamp":"2016\/07\/06 12:23:06"},{"postBody":"","timestamp":"2016\/07\/12 11:14:11"},{"postBody":"","timestamp":"2016\/07\/11 20:35:42"},{"postBody":"Anyone around campus who plays Pokemon go join this page : https:\/\/www.facebook.com\/groups\/1709750475957752\/","timestamp":"2016\/07\/12 02:24:54"},{"postBody":"","timestamp":"2016\/07\/12 19:05:25"},{"postBody":"","timestamp":"2016\/07\/12 11:33:32"},{"postBody":"","timestamp":"2016\/07\/05 16:18:05"},{"postBody":"","timestamp":"2016\/07\/11 18:23:42"},{"postBody":"","timestamp":"2016\/07\/06 12:59:15"},{"postBody":"looking for 2 drake and future tickets! willing to spend $75-$100 each! let me know if you're selling","timestamp":"2016\/07\/06 15:57:02"},{"postBody":"","timestamp":"2016\/07\/08 13:00:21"},{"postBody":"","timestamp":"2016\/07\/08 22:26:28"},{"postBody":"","timestamp":"2016\/07\/11 09:49:39"},{"postBody":"I am no longer an active Mary Kay consultant and I'm just trying to get rid of my inventory. I'm selling everything HALF OFF. Everything is brand new, never used. Please message me with interest, the list and some pics are posted below! Prices are generally half off of the red prices listed! (:","timestamp":"2016\/07\/06 08:24:29"},{"postBody":"","timestamp":"2016\/07\/12 15:20:40"},{"postBody":"selling non student football tickets in section 5b for OSU v Bowling Green on 9\/3 and OSU v Rutgers on 10\/1. Message me if interested.","timestamp":"2016\/07\/08 14:55:22"},{"postBody":"","timestamp":"2016\/07\/05 14:24:12"},{"postBody":"Looking for 2 non-student section tickets to the *ichigan game! Message if you or anyone you know is selling!","timestamp":"2016\/07\/11 23:34:56"},{"postBody":"","timestamp":"2016\/07\/10 12:27:37"},{"postBody":"I am selling most of my furniture that I own. Everything needs to be picked up by Aug 1st.\nDinning room table (1 chair 2 stools) $100\nEnd Table $50\nFloating Kitchen Island $100\nRecliners\/Couch $150\/$75($200 together) ...\n\n\n\n\nSee More","timestamp":"2016\/07\/12 17:49:33"},{"postBody":"I have two tickets for each of the 5 big ten games. I'd be willing to sell them individually if the price is right. Message me if you're interested.","timestamp":"2016\/07\/12 15:59:45"},{"postBody":"Want to get rid of this. Will sell for the best offer. Good condition.","timestamp":"2016\/07\/12 17:31:56"},{"postBody":"","timestamp":"2016\/07\/06 10:11:59"},{"postBody":"","timestamp":"2016\/07\/06 11:21:51"},{"postBody":"Is anyone still selling a BIG 10 Football package? Looking to buy!","timestamp":"2016\/07\/06 12:23:06"},{"postBody":"Hi guys\nMy original plans for the year after graduation changed and it looks like I will be staying in Columbus for this coming year! With that said, looking for a place to live. If you or anyone you know has an extra spot, pretty much anywhere in the Columbus area, please let me know! Thank you","timestamp":"2016\/07\/07 10:49:28"},{"postBody":"For those students looking for a job, they are currently hiring a bunch of Ohio State University students. If you are interested, feel free to check it out!","timestamp":"2016\/07\/05 14:32:08"},{"postBody":"","timestamp":"2016\/06\/17 15:08:18"},{"postBody":"","timestamp":"2016\/06\/17 11:04:19"},{"postBody":"My friend needs someone to sublease her apartment for this upcoming school year! $600\/month at an apartment complex within walking distance to campus. The apartment comes with private bedroom and washer and dryer in the apartment! The apartment is updated and the complex is very new. Girls only please. Message me for details if interested!","timestamp":"2016\/07\/07 11:58:29"},{"postBody":"","timestamp":"2016\/06\/29 21:23:39"},{"postBody":"","timestamp":"2016\/07\/06 12:59:15"},{"postBody":"Does anyone need somewhere to live starting this August?? My roommate is looking to sublet in our 3 bedroom newly renovated apt on 11th. Message me if you're interested!!","timestamp":"2016\/07\/07 10:37:38"},{"postBody":"Couch (good condition) for $100 or best offer","timestamp":"2016\/07\/07 10:14:38"},{"postBody":"","timestamp":"2016\/06\/17 22:19:25"},{"postBody":"OSU House for rent for 5 friends right by Student Union <3\nOSU students and graduates! Perfect apartment for 5 friends! Gas, electric and water are included and the kitchen is furnished with 2 Refrigerators, Stove and Dishwasher. On the first floor a Dryer and Washing Machine are provided. The apartment is located right by the Student Center, New Port Music Hall and campus sorority and fraternity houses. Apartment is newly remodeled. We are not renting to individual people it must be 5 friends.","timestamp":"2016\/07\/07 09:48:26"},{"postBody":"","timestamp":"2016\/06\/16 21:52:48"},{"postBody":"Is anyone selling 2 Rutgers tickets (side by side) on North stands?","timestamp":"2016\/07\/02 12:56:08"},{"postBody":"Trying to find a subleaser for my room next year, $598\/month. 107 E 16th Ave Apartment B. Includes fully equipped kitchen, dishwasher, A\/C, on-site laundry, off street parking, and great location","timestamp":"2016\/07\/07 16:24:24"},{"postBody":"Hello! I have a full size mattress and nothing else so looking for either a frame and box spring or platform bed if anyone is selling any! Thanks.","timestamp":"2016\/07\/06 16:51:42"},{"postBody":"Selling multiple general admission Kanye west floor seats for the concert on September 25th, at the schott. Message me for details","timestamp":"2016\/07\/02 20:48:54"},{"postBody":"","timestamp":"2016\/07\/04 09:57:36"},{"postBody":"","timestamp":"2016\/07\/05 16:18:05"},{"postBody":"2004 ford ranger edge for sale: $4000 obo. 117k miles. Runs well no issues.","timestamp":"2016\/07\/07 15:44:47"},{"postBody":"Renting a room in Harrison West starting August 1st. Message me if interested.","timestamp":"2016\/07\/07 11:49:26"},{"postBody":"Looking for 1-2 tickets to Cole Swindell at Flannagans Dublin for Red White and Country on July 3","timestamp":"2016\/06\/26 10:12:54"},{"postBody":"looking for 2 drake and future tickets! willing to spend $75-$100 each! let me know if you're selling","timestamp":"2016\/07\/06 15:57:02"},{"postBody":"Is anybody interested in catching a ride home over the weekend's and holiday's If so, please check out the OSU Rideshare group, on Facebook! :)\nhttps:\/\/www.facebook.com\/groups\/290632507641327\/","timestamp":"2015\/09\/09 10:37:13"},{"postBody":"","timestamp":"2016\/06\/24 11:41:05"},{"postBody":"2016-17 SUBLEASE! 2 bedrooms in a 4 bedroom house located on North Campus. West Norwich, right by High Street. 5 minute walk to Fisher\/Engineering buildings. Lots of parking, low utilities, awesome air conditioning, big front porch, large living room and kitchen, plus a cost free washer and dryer! $510 per month. Pictures available if interested!","timestamp":"2016\/07\/06 23:36:05"},{"postBody":"","timestamp":"2016\/06\/17 13:07:26"},{"postBody":"","timestamp":"2016\/06\/29 20:14:00"},{"postBody":"I am no longer an active Mary Kay consultant and I'm just trying to get rid of my inventory. I'm selling everything HALF OFF. Everything is brand new, never used. Please message me with interest, the list and some pics are posted below! Prices are generally half off of the red prices listed! (:","timestamp":"2016\/07\/06 08:24:29"},{"postBody":"","timestamp":"2016\/07\/05 14:24:12"},{"postBody":"I am selling a medium and small dog crate. Both are in good condition and clean.\nMedium: 32 X 21 up to 55 lbs\nSmall: 28 X 20 up to 30 lbs\nI am asking $35 for each","timestamp":"2016\/07\/07 15:28:51"},{"postBody":"Table + 5 chairs $80\nCouch $120\nMattress $150\nBox spring $20\nBed frame $120 ...\n\n\nSee More","timestamp":"2016\/07\/06 10:59:14"},{"postBody":"Hi guys\nMy original plans for the year after graduation changed and it looks like I will be staying in Columbus for this coming year! With that said, looking for a place to live. If you or anyone you know has an extra spot, pretty much anywhere in the Columbus area, please let me know! Thank you","timestamp":"2016\/07\/07 10:49:28"},{"postBody":"For those students looking for a job, they are currently hiring a bunch of Ohio State University students. If you are interested, feel free to check it out!","timestamp":"2016\/07\/05 14:32:08"},{"postBody":"15\" Macbook Pro - 250 GB SSD, 8 GB RAM - $400\niPad Mini - 64 GB, First Generation - $60\nMessage for more details.","timestamp":"2016\/07\/07 19:57:55"},{"postBody":"2004 ford ranger edge for sale: $4000 obo. 117k miles. Runs well no issues.","timestamp":"2016\/07\/07 15:44:47"},{"postBody":"My friend needs someone to sublease her apartment for this upcoming school year! $600\/month at an apartment complex within walking distance to campus. The apartment comes with private bedroom and washer and dryer in the apartment! The apartment is updated and the complex is very new. Girls only please. Message me for details if interested!","timestamp":"2016\/07\/07 11:58:29"},{"postBody":"Renting a room in Harrison West starting August 1st. Message me if interested.","timestamp":"2016\/07\/07 11:49:26"},{"postBody":"Is anybody interested in catching a ride home over the weekend's and holiday's If so, please check out the OSU Rideshare group, on Facebook! :)\nhttps:\/\/www.facebook.com\/groups\/290632507641327\/","timestamp":"2015\/09\/09 10:37:13"},{"postBody":"Does anyone need somewhere to live starting this August?? My roommate is looking to sublet in our 3 bedroom newly renovated apt on 11th. Message me if you're interested!!","timestamp":"2016\/07\/07 10:37:38"},{"postBody":"Couch (good condition) for $100 or best offer","timestamp":"2016\/07\/07 10:14:38"},{"postBody":"2016-17 SUBLEASE! 2 bedrooms in a 4 bedroom house located on North Campus. West Norwich, right by High Street. 5 minute walk to Fisher\/Engineering buildings. Lots of parking, low utilities, awesome air conditioning, big front porch, large living room and kitchen, plus a cost free washer and dryer! $510 per month. Pictures available if interested!","timestamp":"2016\/07\/06 23:36:05"},{"postBody":"I am selling a medium and small dog crate. Both are in good condition and clean.\nMedium: 32 X 21 up to 55 lbs\nSmall: 28 X 20 up to 30 lbs\nI am asking $35 for each","timestamp":"2016\/07\/07 15:28:51"},{"postBody":"OSU House for rent for 5 friends right by Student Union <3\nOSU students and graduates! Perfect apartment for 5 friends! Gas, electric and water are included and the kitchen is furnished with 2 Refrigerators, Stove and Dishwasher. On the first floor a Dryer and Washing Machine are provided. The apartment is located right by the Student Center, New Port Music Hall and campus sorority and fraternity houses. Apartment is newly remodeled. We are not renting to individual people it must be 5 friends.","timestamp":"2016\/07\/07 09:48:26"},{"postBody":"Table + 5 chairs $80\nCouch $120\nMattress $150\nBox spring $20\nBed frame $120 ...\n\n\nSee More","timestamp":"2016\/07\/06 10:59:14"},{"postBody":"Trying to find a subleaser for my room next year, $598\/month. 107 E 16th Ave Apartment B. Includes fully equipped kitchen, dishwasher, A\/C, on-site laundry, off street parking, and great location","timestamp":"2016\/07\/07 16:24:24"}];
+  var numRight = 0, numWrong = 0;
   
   for(i=0; i<posts.length; i++) {
-    var postbody = posts[i].postBody;
-    var r = bayes.guess(postbody);
+    var r = bayes.guess(posts[i][0]);
+    var guess = r[0] > r[1];
+    var certainty = r[2];
     
-    if(postbody !== "") {
-      var guess = r[0] > r[1];
-      console.log(postbody, guess, r);
-      
-      //manual training, "is the post about money in any way?"
-      if(i<Math.floor(posts.length/4)) {
-        var isAboutBuyingSelling = window.confirm("Is the following about money?" +
-          "\n\n"+postbody);
-        
-        //'learn' from the human training...  
-        bayes.learn(postbody, isAboutBuyingSelling);
-      }
+    if(posts[i][1] == guess) {
+      numRight++;
+    } else {
+      numWrong++;
     }
+    
+    bayes.learn(posts[i][0], posts[i][1], (1.0-certainty) * (learnStep/100));
   }
-};
-
-run();
+  
+  if((numRight/posts.length) >= 0.9) break;
+  
+  console.log(numRight, numWrong, Math.floor(numRight/posts.length*100), Math.floor(numWrong/posts.length*100));
+}
 
 
 
