@@ -469,7 +469,7 @@ var posts = [["Is anyone still selling a BIG 10 Football package? Looking to buy
   ["Table + 5 chairs $80\nCouch $120\nMattress $150\nBox spring $20\nBed frame $120 ...\n\n\nSee More",true],
   ["Trying to find a subleaser for my room next year, $598/month. 107 E 16th Ave Apartment B. Includes fully equipped kitchen, dishwasher, A/C, on-site laundry, off street parking, and great location",true]];
 
-
+var prevPercentage = 0;
 for(learnStep=0; learnStep<100; learnStep++) {
   console.warn("Learning, Step "+learnStep);
   
@@ -489,7 +489,9 @@ for(learnStep=0; learnStep<100; learnStep++) {
     bayes.learn(posts[i][0], posts[i][1], (1.0-certainty) * (learnStep/100));
   }
   
-  if((numRight/posts.length) >= 0.9) break;
+  var curPercentage = numRight/posts.length;
+  if(prevPercentage >= curPercentage) break;
+  else prevPercentage = curPercentage;
   
   console.log(numRight, numWrong, Math.floor(numRight/posts.length*100), Math.floor(numWrong/posts.length*100));
 }
