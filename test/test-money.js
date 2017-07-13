@@ -1,4 +1,4 @@
-var lib = require('../bayes.js');
+var lib = require('../lib/bayes.js');
 
 function shuffle(a) {
     var j, x, i;
