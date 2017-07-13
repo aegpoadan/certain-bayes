@@ -1,4 +1,4 @@
-
+var lib = require('../bayes.js');
 
 function shuffle(a) {
     var j, x, i;
@@ -387,7 +387,7 @@ var phrases = [
 
 shuffle(phrases);
 
-var bayes = new BAYES(phrases, function(phrase) {
+var bayes = new lib.BAYES(phrases, function(phrase) {
   /*
     Remove articles in the phrase, return the array of words.
     "Articles" refers to words that don't matter as they have
