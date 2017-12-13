@@ -1,0 +1,1535 @@
+{
+  "verbose": false,
+  "totalPositiveBits": 65731,
+  "totalNegativeBits": 79898,
+  "uniquePositiveBits": 72,
+  "uniqueNegativeBits": 118,
+  "totalPositiveInputs": 4664,
+  "totalNegativeInputs": 1342,
+  "totalInputs": 6006,
+  "positiveProbability": 0.7765567765567766,
+  "negativeProbability": 0.22344322344322345,
+  "bitClass": {
+    "now": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "recruiting": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "student": {
+      "positive": 560,
+      "negative": 461,
+      "count": 1021,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0.005769856567123082
+    },
+    "athletes": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "for": {
+      "positive": 4055,
+      "negative": 3216,
+      "count": 7271,
+      "weight": 1,
+      "positiveProbability": 0.061690830810424306,
+      "negativeProbability": 0.04025132043355278
+    },
+    "ohio": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "state": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "crew": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "we": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "have": {
+      "positive": 0,
+      "negative": 932,
+      "count": 932,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011664872712708704
+    },
+    "amazing": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "opportunity": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "to": {
+      "positive": 1520,
+      "negative": 2755,
+      "count": 4275,
+      "weight": 1,
+      "positiveProbability": 0.023124553102797766,
+      "negativeProbability": 0.034481463866429696
+    },
+    "walk": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "on": {
+      "positive": 0,
+      "negative": 1403,
+      "count": 1403,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.017559888858294324
+    },
+    "our": {
+      "positive": 0,
+      "negative": 2816,
+      "count": 2816,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.03524493729505119
+    },
+    "team": {
+      "positive": 0,
+      "negative": 2816,
+      "count": 2816,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.03524493729505119
+    },
+    "with": {
+      "positive": 560,
+      "negative": 461,
+      "count": 1021,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0.005769856567123082
+    },
+    "no": {
+      "positive": 0,
+      "negative": 932,
+      "count": 932,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011664872712708704
+    },
+    "rowing": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "experience": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "necessary": {
+      "positive": 0,
+      "negative": 461,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005769856567123082
+    },
+    "message": {
+      "positive": 1571,
+      "negative": 461,
+      "count": 2032,
+      "weight": 1,
+      "positiveProbability": 0.023900442713483745,
+      "negativeProbability": 0.005769856567123082
+    },
+    "me": {
+      "positive": 1560,
+      "negative": 461,
+      "count": 2021,
+      "weight": 1,
+      "positiveProbability": 0.023733093973924025,
+      "negativeProbability": 0.005769856567123082
+    },
+    "more": {
+      "positive": 1111,
+      "negative": 932,
+      "count": 2043,
+      "weight": 1,
+      "positiveProbability": 0.01690222269553179,
+      "negativeProbability": 0.011664872712708704
+    },
+    "information": {
+      "positive": 0,
+      "negative": 932,
+      "count": 932,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011664872712708704
+    },
+    "looking": {
+      "positive": 951,
+      "negative": 0,
+      "count": 951,
+      "weight": 1,
+      "positiveProbability": 0.01446805921102676,
+      "negativeProbability": 0
+    },
+    "oklahoma": {
+      "positive": 461,
+      "negative": 0,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0.0070134335397301125,
+      "negativeProbability": 0
+    },
+    "tickets": {
+      "positive": 1441,
+      "negative": 0,
+      "count": 1441,
+      "weight": 1,
+      "positiveProbability": 0.02192268488232341,
+      "negativeProbability": 0
+    },
+    "together": {
+      "positive": 461,
+      "negative": 0,
+      "count": 461,
+      "weight": 1,
+      "positiveProbability": 0.0070134335397301125,
+      "negativeProbability": 0
+    },
+    "selling": {
+      "positive": 3713,
+      "negative": 0,
+      "count": 3713,
+      "weight": 1,
+      "positiveProbability": 0.05648780636229481,
+      "negativeProbability": 0
+    },
+    "college": {
+      "positive": 551,
+      "negative": 410,
+      "count": 961,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0.005131542716964129
+    },
+    "algebra": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "rd": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "corrected": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "edition": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "husan": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "collapse": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "by": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "jared": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "diamond": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "jason": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "payne": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "comp": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "lab": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "notebook": {
+      "positive": 1111,
+      "negative": 0,
+      "count": 1111,
+      "weight": 1,
+      "positiveProbability": 0.01690222269553179,
+      "negativeProbability": 0
+    },
+    "chem": {
+      "positive": 2221,
+      "negative": 0,
+      "count": 2221,
+      "weight": 1,
+      "positiveProbability": 0.033789231869285424,
+      "negativeProbability": 0
+    },
+    "unused": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "see": {
+      "positive": 1111,
+      "negative": 942,
+      "count": 2053,
+      "weight": 1,
+      "positiveProbability": 0.01690222269553179,
+      "negativeProbability": 0.011790032291171244
+    },
+    "textbooks": {
+      "positive": 961,
+      "negative": 0,
+      "count": 961,
+      "weight": 1,
+      "positiveProbability": 0.014620194428808325,
+      "negativeProbability": 0
+    },
+    "bio": {
+      "positive": 501,
+      "negative": 0,
+      "count": 501,
+      "weight": 1,
+      "positiveProbability": 0.007621974410856369,
+      "negativeProbability": 0
+    },
+    "anthropology": {
+      "positive": 501,
+      "negative": 0,
+      "count": 501,
+      "weight": 1,
+      "positiveProbability": 0.007621974410856369,
+      "negativeProbability": 0
+    },
+    "psychology": {
+      "positive": 1041,
+      "negative": 0,
+      "count": 1041,
+      "weight": 1,
+      "positiveProbability": 0.01583727617106084,
+      "negativeProbability": 0
+    },
+    "all": {
+      "positive": 1061,
+      "negative": 0,
+      "count": 1061,
+      "weight": 1,
+      "positiveProbability": 0.016141546606623966,
+      "negativeProbability": 0
+    },
+    "cheap": {
+      "positive": 501,
+      "negative": 0,
+      "count": 501,
+      "weight": 1,
+      "positiveProbability": 0.007621974410856369,
+      "negativeProbability": 0
+    },
+    "maryland": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "ticket": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "details": {
+      "positive": 551,
+      "negative": 0,
+      "count": 551,
+      "weight": 1,
+      "positiveProbability": 0.00838265049976419,
+      "negativeProbability": 0
+    },
+    "interested": {
+      "positive": 460,
+      "negative": 942,
+      "count": 1402,
+      "weight": 1,
+      "positiveProbability": 0.006998220017951955,
+      "negativeProbability": 0.011790032291171244
+    },
+    "in": {
+      "positive": 560,
+      "negative": 471,
+      "count": 1031,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0.005895016145585622
+    },
+    "joining": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "buckeye": {
+      "positive": 0,
+      "negative": 942,
+      "count": 942,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011790032291171244
+    },
+    "twirl": {
+      "positive": 0,
+      "negative": 1413,
+      "count": 1413,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.017685048436756865
+    },
+    "tryouts": {
+      "positive": 0,
+      "negative": 1884,
+      "count": 1884,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.023580064582342488
+    },
+    "club": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "competition": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "are": {
+      "positive": 560,
+      "negative": 942,
+      "count": 1502,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0.011790032291171244
+    },
+    "monday": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "august": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "st": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "rpac": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "room": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "open": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "gym": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "is": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "available": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "anyone": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "wanting": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "warm": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "up": {
+      "positive": 0,
+      "negative": 881,
+      "count": 881,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011026558862549751
+    },
+    "or": {
+      "positive": 560,
+      "negative": 1413,
+      "count": 1973,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0.017685048436756865
+    },
+    "stretch": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "will": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "begin": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "promptly": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "pm": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "please": {
+      "positive": 0,
+      "negative": 942,
+      "count": 942,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011790032291171244
+    },
+    "look": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "flyers": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "attached": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "important": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "regarding": {
+      "positive": 0,
+      "negative": 942,
+      "count": 942,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011790032291171244
+    },
+    "tricks": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "attire": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "teams": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "new": {
+      "positive": 550,
+      "negative": 471,
+      "count": 1021,
+      "weight": 1,
+      "positiveProbability": 0.008367436977986035,
+      "negativeProbability": 0.005895016145585622
+    },
+    "baton": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "twirling": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "join": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "beginner": {
+      "positive": 0,
+      "negative": 1413,
+      "count": 1413,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.017685048436756865
+    },
+    "skills": {
+      "positive": 0,
+      "negative": 1413,
+      "count": 1413,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.017685048436756865
+    },
+    "learn": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "how": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "from": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "bt": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "members": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "pl": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "ease": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "email": {
+      "positive": 0,
+      "negative": 942,
+      "count": 942,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011790032291171244
+    },
+    "us": {
+      "positive": 0,
+      "negative": 1352,
+      "count": 1352,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.016921575008135372
+    },
+    "if": {
+      "positive": 460,
+      "negative": 942,
+      "count": 1402,
+      "weight": 1,
+      "positiveProbability": 0.006998220017951955,
+      "negativeProbability": 0.011790032291171244
+    },
+    "you": {
+      "positive": 0,
+      "negative": 942,
+      "count": 942,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.011790032291171244
+    },
+    "any": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "questions": {
+      "positive": 560,
+      "negative": 471,
+      "count": 1031,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0.005895016145585622
+    },
+    "ohiostatebuckeyetwirl": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "gmail": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "com": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "follow": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "page": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "facebook": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "instagram": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "hope": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "there": {
+      "positive": 0,
+      "negative": 471,
+      "count": 471,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005895016145585622
+    },
+    "math": {
+      "positive": 460,
+      "negative": 0,
+      "count": 460,
+      "weight": 1,
+      "positiveProbability": 0.006998220017951955,
+      "negativeProbability": 0
+    },
+    "spanish": {
+      "positive": 460,
+      "negative": 0,
+      "count": 460,
+      "weight": 1,
+      "positiveProbability": 0.006998220017951955,
+      "negativeProbability": 0
+    },
+    "hey": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "osu": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "i": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "am": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "campus": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "representative": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "helpful": {
+      "positive": 540,
+      "negative": 410,
+      "count": 950,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0.005131542716964129
+    },
+    "free": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "job": {
+      "positive": 0,
+      "negative": 820,
+      "count": 820,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.010263085433928258
+    },
+    "search": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "website": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "called": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "wayup": {
+      "positive": 0,
+      "negative": 1230,
+      "count": 1230,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.015394628150892388
+    },
+    "helps": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "students": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "like": {
+      "positive": 0,
+      "negative": 820,
+      "count": 820,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.010263085433928258
+    },
+    "find": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "jobs": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "internships": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "has": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "variety": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "of": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "companies": {
+      "positive": 0,
+      "negative": 820,
+      "count": 820,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.010263085433928258
+    },
+    "google": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "starbucks": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "start": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "postings": {
+      "positive": 0,
+      "negative": 410,
+      "count": 410,
+      "weight": 1,
+      "positiveProbability": 0,
+      "negativeProbability": 0.005131542716964129
+    },
+    "introductory": {
+      "positive": 1110,
+      "negative": 0,
+      "count": 1110,
+      "weight": 1,
+      "positiveProbability": 0.01688700917375363,
+      "negativeProbability": 0
+    },
+    "chemistry": {
+      "positive": 1670,
+      "negative": 0,
+      "count": 1670,
+      "weight": 1,
+      "positiveProbability": 0.02540658136952123,
+      "negativeProbability": 0
+    },
+    "elementary": {
+      "positive": 550,
+      "negative": 0,
+      "count": 550,
+      "weight": 1,
+      "positiveProbability": 0.008367436977986035,
+      "negativeProbability": 0
+    },
+    "statistics": {
+      "positive": 550,
+      "negative": 0,
+      "count": 550,
+      "weight": 1,
+      "positiveProbability": 0.008367436977986035,
+      "negativeProbability": 0
+    },
+    "stat": {
+      "positive": 550,
+      "negative": 0,
+      "count": 550,
+      "weight": 1,
+      "positiveProbability": 0.008367436977986035,
+      "negativeProbability": 0
+    },
+    "gemstones": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "earth": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "science": {
+      "positive": 1100,
+      "negative": 0,
+      "count": 1100,
+      "weight": 1,
+      "positiveProbability": 0.01673487395597207,
+      "negativeProbability": 0
+    },
+    "textbook": {
+      "positive": 1080,
+      "negative": 0,
+      "count": 1080,
+      "weight": 1,
+      "positiveProbability": 0.01643060352040894,
+      "negativeProbability": 0
+    },
+    "both": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "books": {
+      "positive": 1100,
+      "negative": 0,
+      "count": 1100,
+      "weight": 1,
+      "positiveProbability": 0.01673487395597207,
+      "negativeProbability": 0
+    },
+    "were": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "their": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "respective": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "courses": {
+      "positive": 540,
+      "negative": 0,
+      "count": 540,
+      "weight": 1,
+      "positiveProbability": 0.00821530176020447,
+      "negativeProbability": 0
+    },
+    "trade": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "full": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "season": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "reserved": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "block": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "o": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "south": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "willing": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "pay": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "difference": {
+      "positive": 490,
+      "negative": 0,
+      "count": 490,
+      "weight": 1,
+      "positiveProbability": 0.007454625671296649,
+      "negativeProbability": 0
+    },
+    "central": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "norton": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "mix": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "sociology": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "soc": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "laboratory": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "only": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "sheets": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "taken": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "out": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "offers": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "perfect": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    },
+    "condition": {
+      "positive": 560,
+      "negative": 0,
+      "count": 560,
+      "weight": 1,
+      "positiveProbability": 0.008519572195767598,
+      "negativeProbability": 0
+    }
+  },
+  "bayes": true
+}
